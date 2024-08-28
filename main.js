@@ -1,7 +1,7 @@
 const SHAPE_HEIGHT_RANGE = { 
-  shape1: { min: 200, max: 350 },
-  shape2: { min: 250, max: 350 },
-  shape3: { min: 300, max: 400 }
+  shape1: { min: 200, max: 450 },
+  shape2: { min: 250, max: 450 },
+  shape3: { min: 300, max: 500 }
 };
 const SHAPE_SPEEED_RANGES = {
   shape1: { min: 5, max: 10 },

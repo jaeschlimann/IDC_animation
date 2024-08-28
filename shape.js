@@ -44,7 +44,6 @@ class Shape {
   }
 
   show() {
-    // Update position of the SVG element
     this.element.style.left = `${this.position.x - this.maxHeight / 2}px`;
     this.element.style.top = `${this.position.y - this.maxHeight / 2}px`;
   }
