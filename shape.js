@@ -14,11 +14,9 @@ class Shape {
     this.velocity = { x: 0, y: 0 };
     this.acceleration = { x: 0, y: 0 };
 
-    this.target = {
-      x: 0,
-      y: 0
-    };
-    this.changeTargetPosition();
+    this.target = globalTarget;
+
+    changeGlobalTargetPosition();
     this.changeTargetPeriodically();
 
     this.element.style.width = `${this.maxHeight}px`;
@@ -74,15 +72,10 @@ class Shape {
   changeTargetPeriodically() {
     setInterval(() => {
       if (!this.hasMoved) {
-        this.changeTargetPosition();
+        changeGlobalTargetPosition(); 
       }
     }, 10000);
   }
 
-  changeTargetPosition() {
-    this.target.x = Math.random() * window.innerWidth;
-    this.target.y = Math.random() * window.innerHeight;
-    // console.log(`Nouvelle cible: (${this.target.x}, ${this.target.y})`);
-  }
 
 }

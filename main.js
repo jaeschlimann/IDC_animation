@@ -12,6 +12,8 @@ const SHAPE_SPEEED_RANGES = {
 let canvas;
 let shapes = [];
 let mouse = { x: null, y: null };
+let globalTarget = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
 
 function setup() {
   canvas = document.getElementById('canvas');
@@ -55,6 +57,13 @@ function setupShapes() {
     createRandomShape('shape2', SHAPE_SPEEED_RANGES.shape2, SHAPE_HEIGHT_RANGE.shape2),
     createRandomShape('shape3', SHAPE_SPEEED_RANGES.shape3, SHAPE_HEIGHT_RANGE.shape3)
   ];
+}
+
+function changeGlobalTargetPosition() {
+  const halfSize = 250;
+  globalTarget.x = Math.random() * (window.innerWidth - halfSize * 2) + halfSize;
+  globalTarget.y = Math.random() * (window.innerHeight - halfSize * 2) + halfSize;
+  
 }
 
 setup();
