@@ -11,18 +11,21 @@ const SHAPE_SPEEED_RANGES = {
 
 let canvas;
 let shapes = [];
-let mouse = { x: 0, y: 0 };
+let mouse = { x: null, y: null };
 
 function setup() {
   canvas = document.getElementById('canvas');
   
-  // Add event listener for mouse movement
   window.addEventListener('mousemove', (event) => {
     mouse.x = event.clientX;
     mouse.y = event.clientY;
   });
 
-  // Initialize shapes
+  window.addEventListener('touchstart', (event) => {
+    mouse.x = event.touches[0].clientX;
+    mouse.y = event.touches[0].clientY;
+  });
+
   shapes = setupShapes();
   draw();
 }
